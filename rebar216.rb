@@ -1,4 +1,4 @@
-class Rebar < Formula
+class Rebar216 < Formula
   desc "Erlang build tool"
   homepage "https://github.com/rebar/rebar"
   url "https://github.com/rebar/rebar/archive/2.6.1.tar.gz"
