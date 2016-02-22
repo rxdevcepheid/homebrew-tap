@@ -3,7 +3,7 @@ class Proguard411 < Formula
   homepage "http://proguard.sourceforge.net/"
   url "https://sourceforge.net/projects/proguard/files/proguard/4.11/proguard4.11.tar.gz"
   version "4.11"
-  sha256 "162fb2816212c6a7a195884a01ff826920919e97f57914a5b00bdf7641fc00f6"
+  sha256 "90a4dbf8c016fd84da6d48d8b16e450ee07abafbfb7bb6eb5028651a8c255d9e"
 
   bottle :unneeded
 
