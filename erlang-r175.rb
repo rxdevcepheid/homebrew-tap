@@ -1,4 +1,4 @@
-class ErlangR192 < Formula
+class ErlangR175 < Formula
   desc "Erlang Programming Language"
   homepage "http://www.erlang.org"
   url "https://github.com/erlang/otp/archive/OTP-17.5.tar.gz"
