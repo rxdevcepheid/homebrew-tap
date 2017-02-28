@@ -2,7 +2,7 @@ class ErlangR175 < Formula
   desc "Erlang Programming Language"
   homepage "http://www.erlang.org"
   url "https://github.com/erlang/otp/archive/OTP-17.5.tar.gz"
-  sha256 "111ef24b045cacd881839c959ed58c2db92a160b4221308687cc36b829b21394"
+  sha256 "cf19313925011afb59daa2742a9a0c5b97daf60daaa832ef1d61c6f13d770d2c"
 
   bottle do
     cellar :any
