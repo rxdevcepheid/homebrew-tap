@@ -3,7 +3,7 @@ require "formula"
 class Elasticsearch122 < Formula
   homepage "http://www.elasticsearch.org"
   url "https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.2.2.tar.gz"
-  sha1 "2c30c3c246896818a7f652720d4e418aa5cb278b"
+  sha256 "c833d000c7e29e17b4cc5df2e26020c159ee086cdf4ac19f661911cc9aedfbee"
 
   depends_on :java => "1.7"
 
