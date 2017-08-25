@@ -7,7 +7,7 @@ class Rabbitmq368 < Formula
   homepage "https://www.rabbitmq.com"
   url "https://www.rabbitmq.com/releases/rabbitmq-server/v3.6.8/rabbitmq-server-mac-standalone-3.6.8.tar.xz"
   version "3.6.8"
-  sha256 "9c3ece6695d0369f17f6c543fde16c50421e3a9bb5bb455403f5e51a4f897a70"
+  sha256 "a01e2a3901ee975a85cc37fc5bbab9c2ddeeea436979ac31643267c9e3633d72"
 
   bottle :unneeded
 
