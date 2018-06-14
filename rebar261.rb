@@ -12,7 +12,7 @@ class Rebar261 < Formula
     sha256 "4ada78621f9e1b8fec08e63de736602f407c70af3de4b288a7edaf00a14c4b5b" => :mavericks
   end
 
-  depends_on "erlang-r175"
+  depends_on "erlang-r18"
 
   def install
     system "./bootstrap"
