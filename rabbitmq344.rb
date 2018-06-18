@@ -48,7 +48,7 @@ class Rabbitmq344 < Formula
     (bash_completion/"rabbitmqadmin.bash").write `#{sbin}/rabbitmqadmin --bash-completion`
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
     Management Plugin enabled by default at http://localhost:15672
     EOS
   end
@@ -61,7 +61,7 @@ class Rabbitmq344 < Formula
     system sbin/"rabbitmqctl", "stop"
   end
 
-  def rabbitmq_env; <<-EOS.undent
+  def rabbitmq_env; <<-EOS
     CONFIG_FILE=#{etc}/rabbitmq/rabbitmq
     NODE_IP_ADDRESS=127.0.0.1
     NODENAME=rabbit@localhost
@@ -70,7 +70,7 @@ class Rabbitmq344 < Formula
 
   plist_options :manual => "rabbitmq-server"
 
-  def plist; <<-EOS.undent
+  def plist; <<-EOS
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN"
     "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
