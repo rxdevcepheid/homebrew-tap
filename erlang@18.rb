@@ -87,7 +87,7 @@ class ErlangAT18 < Formula
       --enable-smp-support
     ]
 
-    args << "--enable-darwin-64bit" if MacOS.prefer_64_bit?
+    args << "--enable-darwin-64bit" if Hardware::CPU.is_64_bit?
     args << "--enable-native-libs" if build.with? "native-libs"
     args << "--enable-dirty-schedulers" if build.with? "dirty-schedulers"
     args << "--enable-wx" if build.with? "wxmac"
