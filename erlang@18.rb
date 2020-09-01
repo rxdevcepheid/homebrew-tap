@@ -30,16 +30,6 @@ class ErlangAT18 < Formula
   depends_on :java => :optional
   depends_on "wxmac" => :recommended # for GUI apps like observer
 
-  # Check if this patch can be removed when OTP 18.3.5 is released.
-  # Erlang will crash on macOS 10.13 any time the crypto lib is used.
-  # The Erlang team has an open PR for the patch but it needs to be applied to
-  # older releases. See https://github.com/erlang/otp/pull/1501 and
-  # https://bugs.erlang.org/browse/ERL-439 for additional information.
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/774ad1f/erlang%4018/boring-ssl-high-sierra.patch"
-    sha256 "7cc1069a2d9418a545e12981c6d5c475e536f58207a1faf4b721cc33692657ac"
-  end
-
   # Pointer comparison triggers error with Xcode 9
   patch do
     url "https://github.com/erlang/otp/commit/a64c4d806fa54848c35632114585ad82b98712e8.diff?full_index=1"
