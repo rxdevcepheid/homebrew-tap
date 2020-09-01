@@ -72,7 +72,7 @@ class ErlangAT18 < Formula
       --enable-threads
       --enable-sctp
       --enable-dynamic-ssl-lib
-      --with-ssl=#{Formula["openssl"].opt_prefix}
+      --with-ssl= 
       --enable-shared-zlib
       --enable-smp-support
     ]
