@@ -3,16 +3,6 @@ class ErlangAT18 < Formula
   homepage "https://www.erlang.org/"
   url "https://github.com/erlang/otp/archive/OTP-18.3.4.tar.gz"
   sha256 "7ab381d64a2943a35782f173792e4c2678ae9fd9bffba1f2814ffe701070c1bc"
-  head "https://github.com/erlang/otp.git", :branch => "maint-18"
-
-  bottle do
-    cellar :any
-    rebuild 1
-    sha256 "c9e0f48a2db7b2c4a3aa58d2b7707128a9a7a7739c8ef4aaf8a79395d3fbdece" => :high_sierra
-    sha256 "0ca10369f89c7a561bd54a884e0cd9dc1ac67ab53a652a19e1dcc3007374a77a" => :sierra
-    sha256 "68419c51401c6c144ea0b5a9c7a327c397a4bd92ff0c6b5d083a73c7d81caf05" => :el_capitan
-    sha256 "8a1880af3b22343f01e0b2ceb716bda49cd324fb55027179210f2469bd6cda94" => :yosemite
-  end
 
   keg_only :versioned_formula
 
@@ -25,15 +15,10 @@ class ErlangAT18 < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
+  depends_on "openssl"
   depends_on "fop" => :optional # enables building PDF docs
   depends_on :java => :optional
   depends_on "wxmac" => :recommended # for GUI apps like observer
-
-  # Pointer comparison triggers error with Xcode 9
-  patch do
-    url "https://github.com/erlang/otp/commit/a64c4d806fa54848c35632114585ad82b98712e8.diff?full_index=1"
-    sha256 "3261400f8d7f0dcff3a52821daea3391ebfa01fd859f9f2d9cc5142138e26e15"
-  end
 
   resource "man" do
     url "https://www.erlang.org/download/otp_doc_man_18.3.tar.gz"
@@ -71,7 +56,7 @@ class ErlangAT18 < Formula
       --enable-threads
       --enable-sctp
       --enable-dynamic-ssl-lib
-      --with-ssl= 
+      --with-ssl=#{Formula["openssl"].opt_prefix}
       --enable-shared-zlib
       --enable-smp-support
     ]
@@ -80,7 +65,10 @@ class ErlangAT18 < Formula
     args << "--enable-native-libs" if build.with? "native-libs"
     args << "--enable-dirty-schedulers" if build.with? "dirty-schedulers"
     args << "--enable-wx" if build.with? "wxmac"
-    args << "--with-dynamic-trace=dtrace" if MacOS::CLT.installed?
+
+    if MacOS.version >= :snow_leopard && MacOS::CLT.installed?
+      args << "--with-dynamic-trace=dtrace"
+    end
 
     if build.without? "hipe"
       # HIPE doesn't strike me as that reliable on macOS
@@ -108,7 +96,7 @@ class ErlangAT18 < Formula
     end
   end
 
-  def caveats; <<~EOS
+  def caveats; <<-EOS.undent
     Man pages can be found in:
       #{opt_lib}/erlang/man
     Access them with `erl -man`, or add this directory to MANPATH.
