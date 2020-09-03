@@ -1,7 +1,7 @@
 class ErlangAT18 < Formula
   desc "Programming language for highly scalable real-time systems"
   homepage "https://www.erlang.org/"
-  url "https://github.com/erlang/otp/archive/OTP-18.3.4..tar.gz"
+  url "https://github.com/erlang/otp/archive/OTP-18.3.4.tar.gz"
   sha256 "7ab381d64a2943a35782f173792e4c2678ae9fd9bffba1f2814ffe701070c1bc"
 
   keg_only :versioned_formula
