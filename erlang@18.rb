@@ -8,7 +8,7 @@ class ErlangAT18 < Formula
     root_url "file:///Users/lpersson/Downloads"   
     cellar :any
     rebuild 11
-    sha256 "77dc8acc693bda09f9e06fd36196d4aa6e3320585c1012b879ab4cd79a7f6322" => :catalina
+    sha256 "7e6f5e8fe280552b8bdb2b53df8156d9ee1f744403602a08cf1acf4dddb85126" => :catalina
   end
 
 
