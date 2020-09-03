@@ -1,15 +1,8 @@
 class ErlangAT18 < Formula
   desc "Programming language for highly scalable real-time systems"
   homepage "https://www.erlang.org/"
-  url "https://github.com/erlang/otp/archive/OTP-18.3.4.11.tar.gz"
+  url "https://github.com/erlang/otp/archive/OTP-18.3.4..tar.gz"
   sha256 "7ab381d64a2943a35782f173792e4c2678ae9fd9bffba1f2814ffe701070c1bc"
-
-  bottle do
-    root_url "file:///Users/lpersson/Downloads"   
-    cellar :any
-    sha256 "7e6f5e8fe280552b8bdb2b53df8156d9ee1f744403602a08cf1acf4dddb85126" => :catalina
-  end
-
 
   keg_only :versioned_formula
 
@@ -64,6 +57,7 @@ class ErlangAT18 < Formula
       --enable-sctp
       --enable-dynamic-ssl-lib
       --with-ssl=#{Formula["openssl@1.1"].opt_prefix}
+      --with-ssl
       --enable-shared-zlib
       --enable-smp-support
     ]
