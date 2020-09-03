@@ -5,7 +5,9 @@ class ErlangAT18 < Formula
   sha256 "7ab381d64a2943a35782f173792e4c2678ae9fd9bffba1f2814ffe701070c1bc"
 
   bottle do
+    root_url "file:///Users/lpersson/Downloads"   
     cellar :any
+    rebuild 11
     sha256 "77dc8acc693bda09f9e06fd36196d4aa6e3320585c1012b879ab4cd79a7f6322" => :catalina
   end
 
