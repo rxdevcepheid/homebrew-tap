@@ -56,6 +56,7 @@ class ErlangAT18 < Formula
       --enable-sctp
       --enable-dynamic-ssl-lib
       --without-wx
+      --without-debugger
       --with-ssl=#{Formula["openssl@1.0"].opt_prefix}
       --enable-shared-zlib
       --enable-smp-support
