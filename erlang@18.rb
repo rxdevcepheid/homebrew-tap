@@ -15,10 +15,9 @@ class ErlangAT18 < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "openssl@1.1"
+  depends_on "openssl@1.0"
   depends_on "fop" => :optional # enables building PDF docs
   depends_on :java => :optional
-  depends_on "wxmac" => :recommended # for GUI apps like observer
 
   resource "man" do
     url "https://www.erlang.org/download/otp_doc_man_18.3.tar.gz"
@@ -56,8 +55,9 @@ class ErlangAT18 < Formula
       --enable-threads
       --enable-sctp
       --enable-dynamic-ssl-lib
-      --with-ssl=#{Formula["openssl@1.1"].opt_prefix}
+      --with-ssl=#{Formula["openssl@1.0"].opt_prefix}
       --with-ssl
+      --without-wx
       --enable-shared-zlib
       --enable-smp-support
     ]
@@ -65,7 +65,6 @@ class ErlangAT18 < Formula
     args << "--enable-darwin-64bit" if Hardware::CPU.is_64_bit?
     args << "--enable-native-libs" if build.with? "native-libs"
     args << "--enable-dirty-schedulers" if build.with? "dirty-schedulers"
-    args << "--enable-wx" if build.with? "wxmac"
 
     if MacOS.version >= :snow_leopard && MacOS::CLT.installed?
       args << "--with-dynamic-trace=dtrace"
