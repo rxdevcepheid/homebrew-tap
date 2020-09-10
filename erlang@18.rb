@@ -58,6 +58,7 @@ class ErlangAT18 < Formula
       --with-ssl=#{Formula["openssl@1.0"].opt_prefix}
       --with-ssl
       --without-wx
+      --disable-wx
       --enable-shared-zlib
       --enable-smp-support
     ]
