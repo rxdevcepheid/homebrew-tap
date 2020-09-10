@@ -1,8 +1,12 @@
 class ErlangAT18 < Formula
   desc "Programming language for highly scalable real-time systems"
   homepage "https://www.erlang.org/"
-  url "https://github.com/erlang/otp/archive/OTP-18.3.4.tar.gz"
+  url "http://erlang.org/download/otp_src_18.3.tar.gz"
   sha256 "7ab381d64a2943a35782f173792e4c2678ae9fd9bffba1f2814ffe701070c1bc"
+
+
+  # http://erlang.org/download/otp_src_18.3.tar.gz
+  #url "https://github.com/erlang/otp/archive/OTP-18.3.4.tar.gz"
 
   keg_only :versioned_formula
 
@@ -45,7 +49,8 @@ class ErlangAT18 < Formula
     ENV["FOP"] = "#{HOMEBREW_PREFIX}/bin/fop" if build.with? "fop"
 
     # Do this if building from a checkout to generate configure
-    system "./otp_build", "autoconf" if File.exist? "otp_build"
+    # not needed if http://erlang.org/download/otp_src_18.3.tar.gz is used insted of https://github.com/erlang/otp/archive/OTP-18.3.4.tar.gz
+    #system "./otp_build", "autoconf" if File.exist? "otp_build"
 
     args = %W[
       --disable-debug
@@ -56,7 +61,6 @@ class ErlangAT18 < Formula
       --enable-sctp
       --enable-dynamic-ssl-lib
       --without-wx
-      --without-debugger
       --with-ssl=#{Formula["openssl@1.0"].opt_prefix}
       --enable-shared-zlib
       --enable-smp-support
