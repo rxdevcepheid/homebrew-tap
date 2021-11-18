@@ -12,7 +12,7 @@ class FlywayAT782 < Formula
 
   bottle :unneeded
 
-  depends_on "openjdk@11"
+  depends_on "adoptopenjdk11"
 
   def install
     rm Dir["*.cmd"]
