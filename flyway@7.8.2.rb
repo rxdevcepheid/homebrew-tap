@@ -15,7 +15,7 @@ class FlywayAT782 < Formula
   def install
     rm Dir["*.cmd"]
     libexec.install Dir["*"]
-    (bin/"flyway").write_env_script libexec/"flyway", JAVA_HOME: Formula["adoptopenjdk"].opt_prefix
+    (bin/"flyway").write_env_script libexec/"flyway"
   end
 
   test do
