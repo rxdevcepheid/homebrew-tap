@@ -10,8 +10,6 @@ class FlywayAT782 < Formula
     regex(/&lt;version&gt;.*?v?(\d+(?:\.\d+)+)&lt;/im)
   end
 
-  bottle :unneeded
-
   def install
     rm Dir["*.cmd"]
     libexec.install Dir["*"]
